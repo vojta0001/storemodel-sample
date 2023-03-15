@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: postgres
+  pool: <%= ENV['DB_POOL'] || ENV['RAILS_MAX_THREADS'] || 5 %>
+
+development:
+  <<: *default
+  url: <%= ENV['DATABASE_DEV_URL'] || 'postgresql://postgres:mysecretpassword@db/storemodel_sample_development' %>
+
+test: &test
+  <<: *default
+  url: <%= ENV['DATABASE_TEST_URL'] || 'postgresql://postgres:mysecretpassword@db/storemodel_sample_test' %>
+
