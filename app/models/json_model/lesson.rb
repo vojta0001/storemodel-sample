@@ -19,6 +19,6 @@ class JsonModel::Lesson < JsonModel::Base
     # old = get_original_val
     # old[LOCALE] = val
     # super(old.to_json)
-    # super(val)
+    super(val)
   end
 end
